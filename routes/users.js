@@ -12,4 +12,6 @@ router.get('/profile/:index', ctrl.users.renderProfile);
 router.put('/profile/:index', ctrl.users.editProfile);
 router.delete('/profile/:index', ctrl.users.deleteUser);
 router.get('/logout',ctrl.users.logOutuser);
+
+
 module.exports = router;

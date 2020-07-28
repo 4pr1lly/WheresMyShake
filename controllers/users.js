@@ -1,5 +1,5 @@
-// const User = require('../models').users;
-// const Review = require('../models').Review;
+const User = require('../models').User;
+const Review = require('../models').Reviews;
 
 
 
@@ -20,7 +20,7 @@ const signup = (req, res) => {
     })
 }   
 const renderLogin = (req, res) => {
-    res.render('login.ejs') //when rendering a template no forward slash needed since it is not redirecting to a url
+    res.render('login.ejs') 
 }
 
 const login = (req, res) => {
@@ -37,30 +37,29 @@ const login = (req, res) => {
 
 
 const renderProfile = (req, res) => {
-    User.findByPk(req.params.index, {
-        include: [
-            {
-            model: Review,
-            
-        }], 
+    console.log(req.user);
+    console.log(`User id is ${req.user.id}`);
+    User.findByPk(req.user.id,{
+        include: [{
+            model: Reviews,
+            attributes: ['id','name']
+        }]
     })
-    .then(foundUser => {
-        console.log(foundUser)
+    .then(userProfile => {
         res.render('profile.ejs', {
-            users: foundUser, 
-            
-        })  
-     })
+            user: userProfile,
+            token: req.query.token
+        })
+    })
 }
 
 const editProfile = (req, res) => {
-    console.log(req.params.index)
+    // console.log(req.params.index)
     User.update(req.body, {
         where: {id: req.params.index},
         returning: true
     })
     .then(updateUser => {
-        console.log(updateUser);
         res.redirect(`/users/profile/${req.params.index}`);
     })
 }

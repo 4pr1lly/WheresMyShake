@@ -8,10 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ShakeWorking: {
-        type: Sequelize.STRING
-      },
-      IceWorking: {
+      IceAvailable: {
         type: Sequelize.BOOLEAN
       },
       location: {
