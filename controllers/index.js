@@ -1,5 +1,6 @@
 module.exports={
-    reviews: require('./reviews'),
+    reviews: require('./review'),
     users: require('./users'),
+    auth: require('./auth'),
 
 }

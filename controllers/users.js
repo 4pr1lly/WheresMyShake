@@ -1,39 +1,8 @@
-const User = require('../models').User;
-const Review = require('../models').Reviews;
+
+const User = require('../models').User; 
+const Reviews = require('../models').Reviews;
 
 
-
-
-
-const index = (req, res) => {
-    res.render('index.ejs') 
-}
-
-const renderSignup = (req, res) => {
-    res.render('signup.ejs')
-}
-
-const signup = (req, res) => {
-    User.create(req.body)
-    .then(newusers => {
-        res.redirect(`/users/profile/${newusers.id}`);
-    })
-}   
-const renderLogin = (req, res) => {
-    res.render('login.ejs') 
-}
-
-const login = (req, res) => {
-    User.findOne({
-        where: {
-            username: req.body.username,
-            password: req.body.password,
-        }
-    })
-    .then(foundusers => {
-        res.redirect(`/users/profile/${foundusers.id}`);
-    })
-}
 
 
 const renderProfile = (req, res) => {
@@ -52,17 +21,21 @@ const renderProfile = (req, res) => {
         })
     })
 }
+   
 
 const editProfile = (req, res) => {
-    // console.log(req.params.index)
     User.update(req.body, {
-        where: {id: req.params.index},
-        returning: true
+        where: {
+            id: req.params.index
+        },
+        returning:  true
     })
-    .then(updateUser => {
-        res.redirect(`/users/profile/${req.params.index}`);
+    .then(updatedUser => {
+        res.redirect(`/users/profile/${req.params.index}/?token=${req.query.token}`);
     })
 }
+    
+
 
 const deleteUser = (req, res) => {
     User.destroy({
@@ -71,24 +44,16 @@ const deleteUser = (req, res) => {
         }
     })
     .then(() => {
-        res.redirect('/index');
+        res.redirect('/');
     })
 }
 
-const logOutuser = (req, res) => {
-    res.redirect('/users');
+   
+    
 
-}
 
 module.exports = {
-    index,
-    renderSignup,
-    renderLogin,
-    signup,
-    login,
     renderProfile,
     editProfile,
-    deleteUser,
-    logOutuser
-
+    deleteUser
 }

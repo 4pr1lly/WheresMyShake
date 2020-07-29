@@ -30,7 +30,7 @@
     ], {});
   	},
 
-  	down: (queryInterface, Sequelize) => {
-    	return queryInterface.bulkDelete('Shakes', null, {});
-  	}
-	};
+    down: (queryInterface, Sequelize) => {
+   
+    }
+  };

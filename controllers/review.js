@@ -1,13 +1,14 @@
-const Reviews = require('../models').Reviews; 
+const Reviews = require('../models').Reviews; //comparable to Fruits
 const User= require('../models').User;
 const Shakes= require('../models').Shakes;
 
 //handles index request
+
 const index = (req, res) => {
-    Reviews.findAll() //return a promise object (sequelize)
-    .then(allreviews => { // if success store fruits in fruits variable
-           res.render('index.ejs', { //render template
-            reviews : allreviews // pass along all the fruits in the Fruits(sequelized) table
+    Reviews.findAll() 
+    .then(allreviews => { 
+           res.render('index.ejs', { 
+            review: allreviews
      });
     })
 
@@ -21,7 +22,7 @@ const show = (req, res) => {
     })
     .then(foundReviews => {
         res.render ('show.ejs', {
-        reviews: foundReviews
+            review: foundReviews
         });
     })
 
@@ -41,10 +42,10 @@ const postReviews = (req, res)=> {
     }
 
     Reviews.create(req.body)
-    .then(newReviews => {
-        res.redirect('/reviews');
+    .then(newReviews  => {
+        res.redirect('/review');
     })
-  
+   
     
 }
 
@@ -54,44 +55,47 @@ const indexDelete = (req, res) => {
         where: {id: req.params.index}
     })
     .then(() => {
-        res.redirect('/reviews')
+        res.redirect('/review')
     })
- 
 }
+   
 
 const renderEdit = (req, res) => {
     Reviews.findByPk(req.params.index)
     .then(foundReviews => {
-        Season.findAll()
+        Shakes.findAll()
         .then(allShakes => {
             res.render('edit.ejs', {
-                review: foundReviews,
+                fruit: foundReviews,
                 shakes: allShakes
             });
         })
     })
 }
 
+
+
 const editReviews = (req, res) => {
-    if(req.body.readyToEat ==="on"){
-        req.body.readyToEat = true;
+    if(req.body.machineWorking ==="on"){
+        req.body.machingWorking = true;
     }else{
-        req.body.readyToEat =false;
+        req.body.machingWorking =false;
     }
     Reviews.update(req.body,{
         where: {id: req.params.index},
-        returning: true //update to send back the updated Fruit object
+        returning: true 
     })
     .then(updatedReviews => {
-        Season.findByPk(req.body.season)//2nd step
-        .then(foundSeason => {
+        Shakes.findByPk(req.body.shakes)//2nd step
+        .then(foundShakes => {
             Reviews.findByPk(req.params.index) //3rd step
-            .then(foundReviews => {
-                foundReviews.addSeason(foundSeason); //4th step adds to the join table
-            res.redirect('/reviews');
+            .then(foundReview => {
+                foundReview.addShakes(foundShakes); //4th step adds to the join table
+            res.redirect('/review');
     })
 })
 })
+
 
 }
 
