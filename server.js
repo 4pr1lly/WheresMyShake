@@ -6,12 +6,10 @@ const bodyParser = require ('body-parser');
 const methodOverride = require ('method-override');
 const jwt=require('jsonwebtoken');
 
-//importing the fruits array from fruits.js
-const app = express(); // returns an objec
+const app = express(); 
 const routes= require ('./routes');
 
-//middleware-every request goes through it
-//using body parse request data
+
 app.use (bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'))
 app.use(express.static(__dirname + '/public'));
@@ -26,9 +24,9 @@ const verifyToken = (req, res, next) => {
             if (err || !decodedUser){
               return res.status(401).json({ error: 'Unauthorized Request'});
             } 
-            req.user = decodedUser;//set the decoded payload to req object as the user information(username,id)
+            req.user = decodedUser;
             console.log(decodedUser);
-            next();// for control to go to th next line of code
+            next();
           }
         )
       }
@@ -45,7 +43,6 @@ app.get('/',(req, res) =>{
 //adding router object to middleware
 app.use('/auth', routes.auth);//URL /users needs to go in the user router. 
 app.use('/reviews', routes.reviews);
-
 app.use('/users',verifyToken, routes.users);//for every API that starts with /users authorize the request (verify the JWT)
 
 

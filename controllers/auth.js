@@ -19,6 +19,8 @@ const signup = (req, res) => {
             if (err) return res.status(500).json(err);
             req.body.password = hashedPwd;
     
+
+
             User.create(req.body) //This saves in the database
             .then(newUser => {
 

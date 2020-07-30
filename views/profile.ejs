@@ -1,54 +1,29 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        
-        <title>Profile Page</title>
     </head>
-    <body class="profilebackground">
-        <h2 id="profiletitle">Welcome <%=users.name%></h2>
+    <body>
+        <h1>Welcome <%=user.name%></h1>
+        <form action="/users/profile/<%=user.id%>?token=<%=token%?>&_method=PUT" method="POST">
+            Name: <input type="text" name="name" value=<%=user.name%> /><br> <br>
+            Username: <input type="text" name="username" value=<%=user.username%> /> <br> <br>
+            Password: <input type="text" name="password" value=<%=user.password%> /><br> <br>
+            <input type="submit" value="Edit Profile" />
+        </form>
+        <br>
+        <form action="/users/<%=user.id%>?_method=DELETE&token=<%=token%?>" method="POST">
+            <input type="submit" value="Delete User" />
+        </form>
 
+            <h3>Reviews added by you:</h3>
+            <% for (let i=0; i< user.Reviews.length; i++){ %>
+             <a href="/review/<%=user.Reviews[i].id%>"><%=user.Reviews[i].name%></a>
+                <br>
+             <% } %>  
 
-        <a href="/users/logout">Signout </a>  
-
-        
-            <div class="linkwrapper"> 
-                <a href="/review/<%=users.id%>">
-                    <div class="reviewlink"> </div>
-                </a>            
-            </div>
-
-
-            <div id="reviewsectiontitle">
-                Submit your reviews:
-            </div>
-
-       
-
-  
-
-
-        <div id="profilesectiontitle"> 
-            Your Profile Details:
-        </div>
-
-        <div class="profiledetails">
-            <form action="/users/profile/<%=users.id%>?_method=PUT" method="POST">
-                Name: <input type="text" name="name" value=<%=users.name%> /><br> <br>
-                Username: <input type="text" name="username" value=<%=users.username%> /> <br> <br>
-                Password: <input type="text" name="password" value=<%=users.password%> /><br> <br>
-                <input id="profileeditbutton" type="submit" value="Edit Profile" />
-            </form>
-            
-            <form action="/users/profile/<%=users.id%>?_method=DELETE" method="POST">
-                    <input id="profilebuttondelete" type="submit" value="Delete User" />
-            </form>
-
-        </div>
         <br><br>
-        
-
-        
-
+        <a href="/review">View All Reviews</a> 
+                
     </body>
 </html>

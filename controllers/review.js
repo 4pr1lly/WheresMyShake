@@ -35,10 +35,10 @@ const renderNew = (req, res) => {
 }
 
 const postReviews = (req, res)=> {
-    if(req.body.readyToEat ==='on'){
-        req.body.readyToEat = true;
+    if(req.body.machineWorking ==='on'){
+        req.body.machineWorking = true;
     }else{
-        req.body.readyToEat =false;
+        req.body.machineWorking =false;
     }
 
     Reviews.create(req.body)
@@ -65,8 +65,8 @@ const renderEdit = (req, res) => {
     .then(foundReviews => {
         Shakes.findAll()
         .then(allShakes => {
-            res.render('edit.ejs', {
-                fruit: foundReviews,
+            res.render('profile.ejs', {
+                review: foundReviews,
                 shakes: allShakes
             });
         })
