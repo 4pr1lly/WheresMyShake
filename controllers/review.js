@@ -65,7 +65,7 @@ const renderEdit = (req, res) => {
     .then(foundReviews => {
         Shakes.findAll()
         .then(allShakes => {
-            res.render('profile.ejs', {
+            res.render('edit.ejs', {
                 review: foundReviews,
                 shakes: allShakes
             });
@@ -92,11 +92,9 @@ const editReviews = (req, res) => {
             .then(foundReview => {
                 foundReview.addShakes(foundShakes); //4th step adds to the join table
             res.redirect('/review');
+        })
     })
-})
-})
-
-
+    })
 }
 
 

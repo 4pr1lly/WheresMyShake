@@ -42,7 +42,7 @@ app.get('/',(req, res) =>{
 
 //adding router object to middleware
 app.use('/auth', routes.auth);//URL /users needs to go in the user router. 
-app.use('/reviews', routes.reviews);
+app.use('/review', routes.reviews);
 app.use('/users',verifyToken, routes.users);//for every API that starts with /users authorize the request (verify the JWT)
 
 

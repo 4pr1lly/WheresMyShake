@@ -76,7 +76,7 @@ const login = (req, res) => {
                         },
                     )
                         console.log('Token: ${token}')
-                    res.redirect(`/users/profile/${foundUser.id}/=token${token}`);
+                    res.redirect(`/users/profile/${foundUser.id}/?token=${token}`);
                 } else {
                   res.send("Incorrect password");
                 }

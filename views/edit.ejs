@@ -7,7 +7,7 @@
         <form action= "/review/<%=review.id%>?_method=PUT"  method="POST">
             Name: <input type="text" name="name" value="<%=review.name%>"/>
             <!-- location: <input type="text" name="location" value="google api"/> -->
-            Is the Ice Cream Machine working: 
+            Is the IceCream Machine working: 
             <input type="checkbox" name="machineWorking" 
                 <% if (review.machineWorking === true) { %>
                     checked

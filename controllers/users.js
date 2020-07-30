@@ -6,8 +6,6 @@ const Reviews = require('../models').Reviews;
 
 
 const renderProfile = (req, res) => {
-    console.log(req.user);
-    console.log(`User id is ${req.user.id}`);
     User.findByPk(req.user.id,{
         include: [{
             model: Reviews,
