@@ -5,7 +5,11 @@ module.exports = (sequelize, DataTypes) => {
   const Reviews = sequelize.define('Reviews', {
     IceAvailable: DataTypes.BOOLEAN,
     location: DataTypes.STRING,
-    userId: DataTypes.INTEGER
+    userId: DataTypes.STRING,
+    name:DataTypes.STRING,
+    username:DataTypes.STRING
+
+
     }, {});
     Reviews.associate = function(models) {
       Reviews.belongsTo(models.User, {foreignKey: 'userId'})

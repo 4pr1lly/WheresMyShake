@@ -7,6 +7,7 @@ const Shakes= require('../models').Shakes;
 const index = (req, res) => {
     Reviews.findAll() 
     .then(allreviews => { 
+        console.log(allreviews)
            res.render('index.ejs', { 
             review: allreviews
      });
@@ -35,6 +36,7 @@ const renderNew = (req, res) => {
 }
 
 const postReviews = (req, res)=> {
+    console.log(req.body)
     if(req.body.machineWorking ==='on'){
         req.body.machineWorking = true;
     }else{
@@ -63,38 +65,38 @@ const indexDelete = (req, res) => {
 const renderEdit = (req, res) => {
     Reviews.findByPk(req.params.index)
     .then(foundReviews => {
-        Shakes.findAll()
-        .then(allShakes => {
+        // Shakes.findAll()
+        // .then(allShakes => {
             res.render('edit.ejs', {
                 review: foundReviews,
-                shakes: allShakes
+                // shakes: allShakes
             });
         })
-    })
+    // })
 }
 
 
 
 const editReviews = (req, res) => {
     if(req.body.machineWorking ==="on"){
-        req.body.machingWorking = true;
+        req.body.machineWorking = true;
     }else{
-        req.body.machingWorking =false;
+        req.body.machineWorking =false;
     }
     Reviews.update(req.body,{
         where: {id: req.params.index},
-        returning: true 
+        returning: true
     })
-    .then(updatedReviews => {
-        Shakes.findByPk(req.body.shakes)//2nd step
-        .then(foundShakes => {
-            Reviews.findByPk(req.params.index) //3rd step
-            .then(foundReview => {
-                foundReview.addShakes(foundShakes); //4th step adds to the join table
+    // .then(updatedReviews => {
+    //     Shakes.findByPk(req.body.shakes)//2nd step
+    //     .then(foundShakes => {
+    //         Reviews.findByPk(req.params.index) //3rd step
+    //         .then(foundReview => {
+    //             foundReview.addShakes(foundShakes); //4th step adds to the join table
             res.redirect('/review');
-        })
-    })
-    })
+    //     })
+    // })
+    // })
 }
 
 
