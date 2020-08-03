@@ -9,10 +9,11 @@ const renderProfile = (req, res) => {
     User.findByPk(req.user.id,{
         include: [{
             model: Reviews,
-            attributes: ['id','name']
+            attributes: ['id','name',"createdAt"]
         }]
     })
     .then(userProfile => {
+        console.log(userProfile.Reviews)
         res.render('profile.ejs', {
             user: userProfile,
             token: req.query.token
@@ -48,8 +49,14 @@ const deleteUser = (req, res) => {
 
 const logOutuser = (req, res) => {
     res.redirect('/users');
-
+X
 }
+
+
+
+
+
+
 
 // const McDonaldsApi = require('mcdonalds-api')(<REGION>)
  

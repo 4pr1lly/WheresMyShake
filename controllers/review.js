@@ -1,6 +1,6 @@
-const Reviews = require('../models').Reviews; //comparable to Fruits
+const Reviews = require('../models').Reviews; 
 const User= require('../models').User;
-const Shakes= require('../models').Shakes;
+// const Shakes= require('../models').Shakes;
 
 //handles index request
 
@@ -36,11 +36,11 @@ const renderNew = (req, res) => {
 }
 
 const postReviews = (req, res)=> {
-    console.log(req.body)
+    // console.log(req.user.id)
     if(req.body.machineWorking ==='on'){
-        req.body.machineWorking = true;
+        req.body.IceAvailable = true;
     }else{
-        req.body.machineWorking =false;
+        req.body.IceAvailable =false;
     }
 
     Reviews.create(req.body)
@@ -65,11 +65,9 @@ const indexDelete = (req, res) => {
 const renderEdit = (req, res) => {
     Reviews.findByPk(req.params.index)
     .then(foundReviews => {
-        // Shakes.findAll()
-        // .then(allShakes => {
             res.render('edit.ejs', {
                 review: foundReviews,
-                // shakes: allShakes
+                
             });
         })
     // })
@@ -87,16 +85,8 @@ const editReviews = (req, res) => {
         where: {id: req.params.index},
         returning: true
     })
-    // .then(updatedReviews => {
-    //     Shakes.findByPk(req.body.shakes)//2nd step
-    //     .then(foundShakes => {
-    //         Reviews.findByPk(req.params.index) //3rd step
-    //         .then(foundReview => {
-    //             foundReview.addShakes(foundShakes); //4th step adds to the join table
             res.redirect('/review');
-    //     })
-    // })
-    // })
+    
 }
 
 

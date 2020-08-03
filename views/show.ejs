@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <meta charset="utf-8">
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
 
-    <body>
+    </head>
+
+    <body class= "showpagebackground">
         <h1>Reviews Show Page</h1>
 
          <%=review.name%> 
-        <%if (review.machineWorking === true) { %>
+        <%if (review.IceAvailable === true) { %>
             Shake machine is working.
         <% } else { %>
-            Shake is not working.
+            Shake machine is not working.
         <% } %>
         <br>
         Review added by <%=review.username%>
