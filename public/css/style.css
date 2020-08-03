@@ -3,16 +3,13 @@
     flex-direction: column;
     align-items: flex-end;
     font-size: 50px;
-    margin-right: 100px;
     margin-top: 2%;
-    font-family: 'Dosis';
-    color:blue;  
-    text-decoration: none;
+    
 }    
 
 .welcomemessage {
     font-family: 'Dosis', sans-serif;
-    font-size: 40px;
+    font-size: 37px;
     display: flex;
     /* flex-direction: column; */
     align-items: flex-end;
@@ -20,5 +17,13 @@
     line-height: 1em;
     margin-left: 60%;
     margin-right: 2%;
+    color:red
   
+  }
+
+  .landingbackground {
+    background-image: url('SIgnup--shutterstock_585448250.jpg');
+    background-size: 125%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
