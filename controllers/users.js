@@ -50,6 +50,16 @@ const logOutuser = (req, res) => {
     res.redirect('/users');
 
 }
+
+// const McDonaldsApi = require('mcdonalds-api')(<REGION>)
+ 
+// const getLocations = async (latitude, longitude, radius, count) => {
+//     const locations = await McDonaldsApi.getLocations(latitude, longitude, radius, count)
+    
+//     /* DO ANY MANIPULATION TO THE RESULTS HERE */
+    
+//     return locations
+// }
    
     
 
