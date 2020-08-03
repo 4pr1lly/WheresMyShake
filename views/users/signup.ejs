@@ -3,16 +3,27 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href="/css/app.css">
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
+
     </head>
-    <body>
-        <h1>Sign Up</h1>
-        <h3><%=msg%></h3>
-        <form action='/auth' method="POST">
-            Name: <input type="text" name="name" /><br> <br>
-            Username: <input type="text" name="username" /> <br> <br>
-            Password: <input type="text" name="password" /><br> <br>
-            <input type="submit" value="SignUp"/>
-        </form>
+
+
+    <body class='signuppage'>
+        <div class="signupcontainer">
+            <h1>Let's get started! </h1>
+            </div>
+            <h3><%=msg%></h3>
+            <div class="signupinstructions"> First you'll need a profile before you can post. 
+                Fill out the information below
+            </div>
+
+            <div class="signupform">
+            <form action='/auth' method="POST">
+                Name: <input type="text" name="name" /><br> <br>
+                Username: <input type="text" name="username" /> <br> <br>
+                Password: <input type="text" name="password" /><br> <br>
+                <input type="submit" value="SignUp"/>
+            </form>
+         </div>
     </body>
 </html>

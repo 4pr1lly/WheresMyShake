@@ -4,6 +4,7 @@
     align-items: flex-end;
     font-size: 50px;
     margin-top: 2%;
+    /* font-family: 'font-effect-shadow-multipl', cursive; */
     
 }    
 
@@ -26,4 +27,21 @@
     background-size: 125%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+  }
+
+  .signuppage {
+    background-image: url('NewUserSignup-shutterstock_1101399728.jpg');
+    width: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .signupinstructions {
+    color:aqua;
+    font-size: 40px;
+    /* font-family: 'Dancing Script', cursive; */
+    width: 50%;
+    text-align: center;
+    margin: 2.5%
   }
