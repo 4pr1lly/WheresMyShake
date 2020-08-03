@@ -2,16 +2,18 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
-        <link rel="stylesheet" href="/css/app.css">
+        <title>Login</title>
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
     </head>
-    <body>
-        <h1>Login</h1>
+    <body class="Loginbackground">
+        <h1>Welcome Back!</h1>
 
-        <form action='/auth/login' method="POST">
-            Username: <input type="text" name="username" /> <br> <br>
-            Password: <input type="text" name="password" /><br> <br>
-            <input type="submit" value="Login"/>
-        </form>
+        <div class="Loginform">
+            <form action='/auth/login' method="POST">
+                Username: <input type="text" name="username" /> <br> <br>
+                Password: <input type="text" name="password" /><br> <br>
+                <input type="submit" value="Login"/>
+            </form>
+        </div>
     </body>
 </html>

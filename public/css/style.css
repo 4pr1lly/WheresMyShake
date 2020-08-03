@@ -45,3 +45,17 @@
     text-align: center;
     margin: 2.5%
   }
+
+  .Loginbackground {
+    background-image: url('fastfood-loginshutterstock_1221898288.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .Loginform {
+    color:goldenrod;
+    font-size: 50px;
+    margin-left: 5%;
+    margin-top: 5%;
+    line-height: .5;
+  }
