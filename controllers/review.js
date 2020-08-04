@@ -73,10 +73,11 @@ const renderEdit = (req, res) => {
     .then(foundReviews => {
             res.render('edit.ejs', {
                 review: foundReviews,
+                token:req.query.token
+
                 
             });
         })
-    // })
 }
 
 

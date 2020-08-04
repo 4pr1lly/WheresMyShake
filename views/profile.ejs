@@ -8,41 +8,56 @@
             scuffed-steel|shadow-multiple|splintered|static|stonewash|vintage|wallpaper' 
             rel='stylesheet' type='text/css'>
 
+
+
     </head>
     <body class="profilebackground">
-        <span class="font-effect-shadow-multiple" style="font-size:50px; font-family:Luckiest Guy;"><h1>Welcome <%=user.name%>!</h1></span>
+        <div class= "reviewcontainer">
+            <span class="font-effect-3d" style="font-size:40px; font-family:Sonsie One;"><a href="/review/<%=user.id%>?token=<%=token%>">
+                See Everyones Reviews</a>
+            </span>
+        </div>
 
+    
+        <span class="font-effect-shadow-multiple" style="font-size:50px; font-family:Luckiest Guy;">
+            <h1>Welcome <%=user.name%>!</h1></span>
+
+            
+     
+        <span class="logoutlink" style="font-size:20px; font-family:Luckiest Guy;"> 
+             <a href="/users/logout" class="logoutlink">Signout</a>  
+        </span>
+            <br><br>
+
+            
         <div class="profildetails">
             <form action="/users/profile/<%=user.id%>?token=<%=token%>&_method=PUT" method="POST">
-                Name: <input type="text" name="name" value=<%=user.name%> /><br> <br>
-                Username: <input type="text" name="username" value=<%=user.username%> /> <br> <br>
-                Password: <input type="text" name="password" value=<%=user.password%> /><br> <br>
+                <b>Name: </b><input type="text" name="name" value=<%=user.name%> /><br> <br>
+                <b>Username:</b> <input type="text" name="username" value=<%=user.username%> /> <br> <br>
+                <b>Password:</b> <input type="text" name="password" value=<%=user.password%> /><br> <br>
                 <input type="submit" value="Edit Profile" />
             </form>
         </div>
 
-        <br>
+        <br><br>
+
 
         <form action="/users/<%=user.id%>?_method=DELETE&token=<%=token%>" method="POST">
             <input type="submit" value="Delete User" />
         </form>
-
-            <h3>Reviews added by you:</h3>
+        <span class="font-effect-mitosis" style="font-size:20px; font-family:Sonsie One;"><h3>Reviews added by you:</h3>
+        </span>
+            <!-- <h3>Reviews added by you:</h3> -->
             <% for (let i=0; i< user.Reviews.length; i++){ %>
 
-                <!-- this code isn't working -->
                 <b>Review: </b> <span class="review"><%=user.Reviews[i].name%>, </span>
                 <b>Create date: </b> <span class="review"><%=user.Reviews[i].createdAt%> </span>
-             <!-- <a href="/review/<%=user.Reviews[i].id%>"><%=user.Reviews[i].name%></a> -->
                 <br>
              <% } %>  
 
         <br><br>
-
-        <a href="/users/logout" class="logoutlink">Signout</a>  
-        <br><br>
-        <br><br> 
-        <a href="/review/<%=user.id%>?token=<%=token%>">View All Reviews</a> 
+       
                 
     </body>
+    
 </html>

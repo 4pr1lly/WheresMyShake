@@ -53,6 +53,7 @@ h1 {
     margin: 2.5%
   }
 
+  
   .Loginbackground {
     background-image: url('NewUserSignup-shutterstock_1101399728.jpg');
     background-attachment: fixed;
@@ -65,6 +66,12 @@ h1 {
     margin-left: 5%;
     margin-top: 5%;
     line-height: .5;
+  }
+
+  a{
+    font-size:30px;
+   
+
   }
 
 
@@ -81,6 +88,31 @@ h1 {
     /* background-repeat: no-repeat; */
     background-size: cover;
   } 
+
+  .reviewcontainer{
+    /* display:flex;
+    /* align-items: center; */
+    /* justify-content: center;
+    margin: 50; */
+    /* width:100px; */
+    height:100px;
+    position: absolute;
+    left:50%;
+    margin-left:-50px;
+    margin-top: 200px;
+
+  }
+
+  .newreviewlink{
+    height:100px;
+    position: absolute;
+    left:50%;
+    margin-left:-50px;
+   
+
+  }
+
+
   .showpagebackground {
     background-image: url('show review-shakemachine-shutterstock_1092191015.jpg');
     background-attachment: fixed;
