@@ -47,10 +47,7 @@ const deleteUser = (req, res) => {
     })
 }
 
-const logOutuser = (req, res) => {
-    res.redirect('/users');
-X
-}
+
 
 
 
@@ -75,5 +72,4 @@ module.exports = {
     renderProfile,
     editProfile,
     deleteUser,
-    logOutuser
 }

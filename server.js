@@ -40,6 +40,12 @@ app.get('/',(req, res) =>{
 })
 
 
+app.get('/users/logout',(req, res) =>{
+  res.render('users/index.ejs');
+
+})
+
+
 //adding router object to middleware
 app.use('/auth', routes.auth);//URL /users needs to go in the user router. 
 app.use('/review', routes.reviews);

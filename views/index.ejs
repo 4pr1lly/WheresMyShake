@@ -17,15 +17,16 @@
     <body class="Reviewbackground">
 
         <span class="font-effect-neon" style="font-size:50px; font-family:Luckiest Guy;">
-            <a href= "/review/new">create a new review</a></span> <br> <br>
-            
+
+            <a href= "/review/new/<%=userId%>">Click here to create a new review</a></span> <br> <br>
+
         <nav>
             <!-- <a href= "/review/new">create a new review</a> -->
         </nav>
         <ul>
             <% for (let i=0; i< review.length; i++){ %>
                 <li>
-                   <a href="/review/<%=review[i].id%>"><%=review[i].name%></a>
+                   <a href="/review/show/<%=review[i].id%>"><%=review[i].name%></a>
                 </li>
                 <form action= "/review/<%=review[i].id%>?_method=DELETE" method= "POST">
                     <input type="submit" value="Delete"/>
@@ -37,7 +38,7 @@
             <% } %>
         </ul>
 
-        <a href="users/profile">Back to your profile </a>  
+        <a href="/users/profile/<%=userId%>?token=<%=token%> ">Back to your profile </a>  
         
     </body>
 

@@ -96,8 +96,7 @@ module.exports = {
     renderLogin,
     signup,
     login,
-    // renderNew,
-    // postReviews
+    
 }
 
 

@@ -17,8 +17,7 @@
 <body class="newreviewbackground">
     <h1>New review page</h1>
 
-    <form action='/review'method='POST'>
-        Name: <input type="text" name="userId" />
+    <form action='/review/<%=userId%>'method='POST'>
         What frozen treat did you get/try to get?: <input type='text' name= 'name'/>
         At which location?: <input type="text" name="location" />
         <!-- location: <input type = 'text' name = 'location'/> -->

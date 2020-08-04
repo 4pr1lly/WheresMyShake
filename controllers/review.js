@@ -5,11 +5,15 @@ const User= require('../models').User;
 //handles index request
 
 const index = (req, res) => {
+    console.log(req.params.userId)
     Reviews.findAll() 
     .then(allreviews => { 
         console.log(allreviews)
            res.render('index.ejs', { 
-            review: allreviews
+            review: allreviews,
+            token:req.query.token,
+            userId:req.params.userId
+
      });
     })
 
@@ -31,8 +35,11 @@ const show = (req, res) => {
 }
 
 const renderNew = (req, res) => {
-    res.render('new.ejs');
+    console.log(req.params.userId)
+    res.render('new.ejs',{
+        userId:req.params.userId
 
+    });
 }
 
 const postReviews = (req, res)=> {
@@ -42,13 +49,11 @@ const postReviews = (req, res)=> {
     }else{
         req.body.IceAvailable =false;
     }
-
+    req.body.userId=req.params.userId
     Reviews.create(req.body)
     .then(newReviews  => {
-        res.redirect('/review');
+        res.redirect(`/review/${req.params.userId}`);
     })
-   
-    
 }
 
 
@@ -57,7 +62,8 @@ const indexDelete = (req, res) => {
         where: {id: req.params.index}
     })
     .then(() => {
-        res.redirect('/review')
+        res.redirect(`/review/${req.params.userId}`);
+
     })
 }
    
@@ -72,7 +78,6 @@ const renderEdit = (req, res) => {
         })
     // })
 }
-
 
 
 const editReviews = (req, res) => {
