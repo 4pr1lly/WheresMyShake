@@ -8,6 +8,13 @@
     
 }    
 
+h1 {
+
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: 100;
+  color:rgb(153, 32, 153),
+}
+
 .welcomemessage {
     font-family: 'Dosis', sans-serif;
     font-size: 37px;
@@ -47,13 +54,13 @@
   }
 
   .Loginbackground {
-    background-image: url('fastfood-loginshutterstock_1221898288.jpg');
+    background-image: url('NewUserSignup-shutterstock_1101399728.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+   
   }
   .Loginform {
-    color:goldenrod;
+    color:aquamarine;
     font-size: 50px;
     margin-left: 5%;
     margin-top: 5%;
@@ -62,7 +69,7 @@
 
 
   .profilebackground {
-    background-image: url('Profile-shutterstock_1101399728 (1).jpg');
+    background-image: url('fastfood-loginshutterstock_1221898288.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -80,3 +87,11 @@
     /* background-repeat: no-repeat; */
     background-size: cover;
   } 
+
+  .newreviewbackground {
+    background-image: url('show review-shakemachine-shutterstock_1092191015.jpg');
+    background-attachment: fixed;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+  } 
+

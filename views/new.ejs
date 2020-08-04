@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Black+Ops+One|Luckiest+Guy|Sonsie+One|Shojumaru&effect=3d|3d-float|anaglyph|brick-sign|canvas-print|
+            crackle|decaying|destruction|distressed|distressed-wood|emboss|fire|fire-animation|fragile|grass|ice|mitosis|neon|outline|putting-green|
+            scuffed-steel|shadow-multiple|splintered|static|stonewash|vintage|wallpaper' 
+            rel='stylesheet' type='text/css'>
+
+
     <title>Document</title>
 </head>
 
-<body>
+<body class="newreviewbackground">
     <h1>New review page</h1>
 
     <form action='/review'method='POST'>
         Name: <input type="text" name="userId" />
         What frozen treat did you get/try to get?: <input type='text' name= 'name'/>
+        At which location?: <input type="text" name="location" />
         <!-- location: <input type = 'text' name = 'location'/> -->
-        Is the machine working?: <input type = 'checkbox' name = 'machineWorking'/>
+        Check this box if the machine is working: <input type = 'checkbox' name = 'machineWorking'/>
         <input type ='submit' value= 'Post your review'/>
     </form>
     

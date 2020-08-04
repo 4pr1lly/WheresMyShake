@@ -3,10 +3,14 @@
     <head>
         <meta charset="utf-8">
         <link href="/css/style.css" rel="stylesheet" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Black+Ops+One|Luckiest+Guy|Sonsie+One|Shojumaru&effect=3d|3d-float|anaglyph|brick-sign|canvas-print|
+            crackle|decaying|destruction|distressed|distressed-wood|emboss|fire|fire-animation|fragile|grass|ice|mitosis|neon|outline|putting-green|
+            scuffed-steel|shadow-multiple|splintered|static|stonewash|vintage|wallpaper' 
+            rel='stylesheet' type='text/css'>
 
     </head>
     <body class="profilebackground">
-        <h1>Welcome <%=user.name%></h1>
+        <span class="font-effect-shadow-multiple" style="font-size:50px; font-family:Luckiest Guy;"><h1>Welcome <%=user.name%>!</h1></span>
 
         <div class="profildetails">
             <form action="/users/profile/<%=user.id%>?token=<%=token%>&_method=PUT" method="POST">
