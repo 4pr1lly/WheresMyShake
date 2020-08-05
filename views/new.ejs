@@ -13,15 +13,20 @@
 
     <title>Document</title>
 </head>
-
 <body class="newreviewbackground">
-    <h1>New review page</h1>
+    <span class="font-effect-vintage" style="font-size:50px; font-family:Luckiest Guy;"><h1>The people need to know!</h1>
+    </span>
+    <!-- <h1>The people need to know!</h1><br><br> -->
 
     <form action='/review/<%=userId%>'method='POST'>
-        What frozen treat did you get/try to get?: <input type='text' name= 'name'/>
-        At which location?: <input type="text" name="location" />
-        <!-- location: <input type = 'text' name = 'location'/> -->
-        Check this box if the machine is working: <input type = 'checkbox' name = 'machineWorking'/>
+        <span class="font-effect-3d-float" style="font-size:30px; font-family:Luckiest Guy;color:oldlace">What frozen treat did you get/try to get?:</span>
+         <input type='text' name= 'name'/><br><br>
+
+         <span class="font-effect-3d-float" style="font-size:30px; font-family:Luckiest Guy;color:oldlace">At which location?:</span>
+             <input type="text" name="location" /> <br><br>
+
+        <span class="font-effect-3d-float" style="font-size:30px; font-family:Luckiest Guy;color:oldlace"> Check this box if the machine is working:</span>
+            <input type = 'checkbox' name = 'machineWorking'/><br><br>
         <input type ='submit' value= 'Post your review'/>
     </form>
     

@@ -3,22 +3,26 @@
             crackle|decaying|destruction|distressed|distressed-wood|emboss|fire|fire-animation|fragile|grass|ice|mitosis|neon|outline|putting-green|
             scuffed-steel|shadow-multiple|splintered|static|stonewash|vintage|wallpaper' 
             rel='stylesheet' type='text/css'>
+            <link href="/css/style.css" rel="stylesheet" type="text/css" />
+
+            <title>Edit Reviews page</title>
 
 <html>
     <head></head>
-    <body>
-        <h1>Edit Reviews page</h1>
-        <form action= "/review/<%=review.id%>?token=<%=token%>_method=PUT"  method="POST">
-            Name: <input type="text" name="name" value="<%=review.name%>"/>
-            <!-- location: <input type="text" name="location" value="google api"/> -->
-            Is the Machine working?: 
+    <body class="editbackground">
+        <span class="font-effect-3d-float" style="font-size:30px; font-family:Luckiest Guy; color:aqua"> <h1>Edit Your Post</h1>
+        </span>
+        <form action= "/review/<%=review.id%>?token=<%=token%>_method=PUT"  method="POST"> <br><br>
+            <span class="font-effect-3d-float" style="font-size:30px; font-family:Luckiest Guy;color:plum">Name:</span>
+            <input type="text" name="name" value="<%=review.name%>"/><br><br>
+            <span class="font-effect-3d-float" style="font-size:30px; font-family:Luckiest Guy;color:plum">Is the Machine working?: </span>
             <input type="checkbox" name="machineWorking" 
                 <% if (review.machineWorking === true) { %>
                     checked
                 <% } %>
                 />
-                
             <input type ="submit" value ="Edit Reviews"/>
+
     </form>
     </body>
 </html>

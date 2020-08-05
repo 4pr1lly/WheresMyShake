@@ -69,11 +69,27 @@ h1 {
   }
 
   a{
-    font-size:30px;
-   
-
+    color:hotpink;
+  
   }
 
+  li{
+    color:aqua
+  }
+
+.showinfo{
+  color:rgb(160, 6, 6);
+  font-size: 50px;
+  font-weight: bolder;
+  opacity: 1.0;
+}
+ 
+.showpagesignout{
+  color: aqua;
+  
+}
+  
+  
 
   .profilebackground {
     background-image: url('fastfood-loginshutterstock_1221898288.jpg');
@@ -83,10 +99,31 @@ h1 {
   } 
 
   .Reviewbackground {
+    background-image: url('mcdys-backgroundshutterstock_784728106 (1).jpg');
+     background-attachment: fixed;
+    background-repeat: no-repeat;
+     background-size: cover;
+    position: absolute;
+    top:0px;
+    right:0px;
+    left:0px;
+    opacity: 1.0;
+    
+  } 
+
+  .editbackground {
+    background-color: steelblue;
     background-image: url('reviewpage-neon-shutterstock_1184207302.jpg');
-    background-attachment: fixed;
-    /* background-repeat: no-repeat; */
-    background-size: cover;
+    background-size: 2300px;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+     /* background-size: cover; */
+    /* position: absolute;
+    top:0px;
+    right:0px;
+    left:0px;
+    opacity: 1.0;  */
+    
   } 
 
   .reviewcontainer{
@@ -109,14 +146,17 @@ h1 {
     left:50%;
     margin-left:-50px;
    
+  }
 
+  h3{
+    font-size: 20px;
   }
 
 
   .showpagebackground {
-    background-image: url('show review-shakemachine-shutterstock_1092191015.jpg');
+    background-image: url('show pg image-shutterstock_1768890320.jpg');
     background-attachment: fixed;
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     background-size: cover;
   } 
 
@@ -126,4 +166,6 @@ h1 {
     /* background-repeat: no-repeat; */
     background-size: cover;
   } 
+
+
 
