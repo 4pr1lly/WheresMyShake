@@ -32,3 +32,4 @@ BackEnd- PostgreSQL database with Sequelize as ORM.
 -Postgres
 -Node.js
 
+"# Shake-AzureDeployment" 
