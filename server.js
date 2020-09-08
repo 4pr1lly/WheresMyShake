@@ -34,10 +34,10 @@ const verifyToken = (req, res, next) => {
    
 
 
-app.get('/',(req, res) =>{
-    res.render('users/index.ejs');
+// app.get('/',(req, res) =>{
+//     res.render('users/index.ejs');
 
-})
+// })
 
 
 app.get('/users/logout',(req, res) =>{
@@ -55,13 +55,21 @@ app.use('/users',verifyToken, routes.users);//for every API that starts with /us
 
 
 //app will run on port 3000
-app.listen(process.env.PORT, () => {
-    console.log('I am listening');
+// app.listen(process.env.PORT, () => {
+//     console.log('I am listening');
+// })
+
+
+
+app.get('/', (req, res) => {
+  res.send('Homepage')
 })
 
+const port = process.env.PORT || 3000;
 
-
-
+app.listen(port, () => {
+  console.log(`I am listening on port ${port}`);
+})
 
 
 
